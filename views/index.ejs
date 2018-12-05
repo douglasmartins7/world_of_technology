@@ -48,6 +48,15 @@
             <td>Telefone</td>
             <td>Endereço</td>
           </tr>
+          <%  for(i=0; i<pessoas.length; i++) { %>
+            <tr>
+              <td><%= pessoas[i].nome %></td>
+              <td><%= pessoas[i].sobrenome %></td>
+              <td><%= pessoas[i].cpf %></td>
+              <td><%= pessoas[i].telefone %></td>
+              <td><%= pessoas[i].endereco %></td>
+            </tr>
+          <% } %>
         </table>
       </fieldset>
   </body>
