@@ -1,5 +1,5 @@
 function validacao(){
-    var nome = $("#nome").val();
+    nome = $("#nome").val();
    // var sobrenome = $("#sobrenome").val();
     var cpf = $("#cpf").val();
    // var telefone = $("#telefone").val();
