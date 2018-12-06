@@ -22,6 +22,14 @@ router.post('/cadastrar-pessoa', function(request, response, next) {
    }
 
    pessoas.push(hash);
+
+   var fs = require('fs');
+   fs.writeFile("/tmp/bancoArquivo.js", JSON.stringify(pessoas), function(err) {
+     if(err) {
+       console.log(err);
+     }
+   });
+
    response.render('index', { title: 'cadastrar-pessoa', pessoas: pessoas });
 });
 
