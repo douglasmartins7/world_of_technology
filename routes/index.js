@@ -33,6 +33,8 @@ router.get('/pesquisar', function(request, response, next) {
       }
       else{
         var bancoDados = JSON.parse(data);
+
+        /* sem utilizar regular expression
         for(var i=0; i<bancoDados.length; i++){
           var nomeMinusculo = request.query.nome.toLowerCase();
           var nomeBancoMinusculo = bancoDados[i].nome.toLowerCase();
@@ -40,10 +42,19 @@ router.get('/pesquisar', function(request, response, next) {
             dadosPesquisados.push(bancoDados[i]);
           }
         }
+        */
+
+        // utilizando regular expression
+        for(var i=0; i<bancoDados.length; i++){
+          var reg = new RegExp(request.query.nome, "i");
+          if(bancoDados[i].nome.match(reg) != null){
+            dadosPesquisados.push(bancoDados[i]);
+          }
+        }
       }
       dados['pessoas'] = dadosPesquisados;  
     }
-
+    
     response.render('index', dados);
   });
 });
