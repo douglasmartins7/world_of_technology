@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var pessoas = [];
-var BANCO_ARQUIVO = "/tmp/bancoArquivo.js";
+var BANCO_ARQUIVO = "dados/bancoArquivo.js";
 
 /* GET home page. */
 router.get('/', function(request, response, next) {
@@ -16,6 +16,35 @@ router.get('/', function(request, response, next) {
     }
 
     response.render('index', dados)
+  });
+});
+
+router.get('/pesquisar', function(request, response, next) {
+  dados = { title: 'Pesquisando em arquivos' };
+  carregarBase(function read(err, data) {
+    if(err) {
+      console.log(err);
+      dados['pessoas'] = [];
+    }
+    else{
+      var dadosPesquisados = [];
+      if(request.query.nome == ""){
+        dadosPesquisados = JSON.parse(data);
+      }
+      else{
+        var bancoDados = JSON.parse(data);
+        for(var i=0; i<bancoDados.length; i++){
+          var nomeMinusculo = request.query.nome.toLowerCase();
+          var nomeBancoMinusculo = bancoDados[i].nome.toLowerCase();
+          if(nomeBancoMinusculo.indexOf(nomeMinusculo) != -1){
+            dadosPesquisados.push(bancoDados[i]);
+          }
+        }
+      }
+      dados['pessoas'] = dadosPesquisados;  
+    }
+
+    response.render('index', dados);
   });
 });
 
