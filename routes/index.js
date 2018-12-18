@@ -28,10 +28,7 @@ router.get('/excluir', function(request, response, next) {
   var pessoa = new Pessoa();
   pessoa.cpf =  request.query.cpf;
   pessoa.excluir(function(pessoas){
-      response.render('index', {
-      title: "Node.js com framwework express",
-      pessoas: pessoas
-    })
+      response.redirect("/");
   })
 
 });
