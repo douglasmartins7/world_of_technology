@@ -12,10 +12,10 @@ var Pessoa = function(){
     this.salvar = function(callback, cpfAlteracao){
         var query = "";
         if(cpfAlteracao == undefined){
-            query = "insert into teste.pessoas(cpf, nome, sobrenome, telefone, endereco)values('" + this.cpf  + "', '" + this.nome  + "' ,'" + this.sobrenome + "', '" + this.telefone  + "', '" + this.endereco + "')";
+            query = "insert into heroku_d8abcfe5bca8446.pessoas(cpf, nome, sobrenome, telefone, endereco)values('" + this.cpf  + "', '" + this.nome  + "' ,'" + this.sobrenome + "', '" + this.telefone  + "', '" + this.endereco + "')";
         }
         else{
-            query = "update teste.pessoas set cpf='" + this.cpf  + "', nome='" + this.nome +"', sobrenome='" + this.sobrenome +"', telefone='" + this.telefone +"', endereco='" + this.endereco +"' where cpf='" + this.cpf +"' ";
+            query = "update heroku_d8abcfe5bca8446.pessoas set cpf='" + this.cpf  + "', nome='" + this.nome +"', sobrenome='" + this.sobrenome +"', telefone='" + this.telefone +"', endereco='" + this.endereco +"' where cpf='" + this.cpf +"' ";
         }
 
         console.log(query);
@@ -31,7 +31,7 @@ var Pessoa = function(){
     }
 
     this.excluir = function(callback){
-        var query = "delete from teste.pessoas where cpf='" + this.cpf  + "' ";
+        var query = "delete from heroku_d8abcfe5bca8446.pessoas where cpf='" + this.cpf  + "' ";
         console.log(query);
 
         App.db.cnn.exec(query, function(dadosRetornadosDaTabela, erro) {
@@ -47,7 +47,7 @@ var Pessoa = function(){
 
 //metodo estatico ou de classe não precisa criar o objeto
 Pessoa.buscar = function(cpf, callback){
-    var query = "SELECT * FROM teste.pessoas where cpf = '" + cpf + "' ";
+    var query = "SELECT * FROM heroku_d8abcfe5bca8446.pessoas where cpf = '" + cpf + "' ";
     App.db.cnn.exec(query, function(dadosRetornadosDaTabela, erro) {
         if(erro){
             console.log("Erro ao executar a query (" +  query + ")");
@@ -65,7 +65,7 @@ Pessoa.buscar = function(cpf, callback){
 }
 
 Pessoa.buscarPorNome = function(nome, callback){
-    var query = "SELECT * FROM teste.pessoas where nome like '%" + nome + "%' ";
+    var query = "SELECT * FROM heroku_d8abcfe5bca8446.pessoas where nome like '%" + nome + "%' ";
     App.db.cnn.exec(query, function(dadosRetornadosDaTabela, erro) {
         if(erro){
             console.log("Erro ao executar a query (" +  query + ")");
@@ -86,7 +86,7 @@ Pessoa.salvarTodos = function(pessoas){
 }
 
 Pessoa.todos = function(callback){
-    var query = "SELECT * FROM teste.pessoas ";
+    var query = "SELECT * FROM heroku_d8abcfe5bca8446.pessoas ";
     App.db.cnn.exec(query, function(dadosRetornadosDaTabela, erro) {
         if(erro){
             console.log("Erro ao executar a query (" +  query + ")");
