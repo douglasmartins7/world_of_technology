@@ -1,7 +1,7 @@
 mysql = require('mysql');
 //        user : passwo or void @ connection database ip or host/ database
 //mysql://root:@localhost/teste
-connectionString = 'mysql://root:@localhost/teste';
+connectionString = process.env.DATABASE_URL || 'mysql://root:@localhost/teste';
 
 db = {}
 db.cnn = {};

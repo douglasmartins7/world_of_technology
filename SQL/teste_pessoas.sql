@@ -38,7 +38,7 @@ CREATE TABLE `pessoas` (
 
 LOCK TABLES `pessoas` WRITE;
 /*!40000 ALTER TABLE `pessoas` DISABLE KEYS */;
-INSERT INTO `pessoas` VALUES (5654654,'Renan','Silva','5364645','rua tal'),(6546546,'Mayra','silva','654654','65'),(36963963,'maria','silva','63939639','rua jujuba'),(48549848,'gera','souza','522856.9','rua forca'),(65654654,'Renan','Kenedy 2','654654','Rua Doutor Vital'),(147147174,'monise','santos','2582582','rua fui'),(654654654,'douglas','santos','4335165','rua tal '),(692528512,'marta','oliveira','1591951','rua jurebeba');
+INSERT INTO `pessoas` VALUES (6546546,'Mayra','silva','654654','65'),(36963963,'maria','silva','63939639','rua jujuba'),(48549848,'gera','souza','522856.9','rua forca'),(65465465,'lkjlkjlkj','lkjlkj','654654','kjhkjhkjh'),(65654654,'Renan','Kenedy 2','654654','Rua Doutor Vital'),(147147174,'monise','santos','2582582','rua fui'),(654654654,'douglas','santos','4335165','rua tal '),(692528512,'marta','oliveira','1591951','rua jurebeba');
 /*!40000 ALTER TABLE `pessoas` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-19 15:01:27
+-- Dump completed on 2018-12-20 15:21:24
