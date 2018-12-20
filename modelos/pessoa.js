@@ -85,6 +85,7 @@ Pessoa.salvarTodos = function(pessoas){
   });
 }
 
+
 Pessoa.todos = function(callback){
     var query = "SELECT * FROM heroku_d8abcfe5bca8446.pessoas ";
     App.db.cnn.exec(query, function(dadosRetornadosDaTabela, erro) {
