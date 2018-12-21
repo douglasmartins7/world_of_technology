@@ -115,7 +115,7 @@ router.get('/cidades.json', function(request, response, next) {
   }
   else{
     response.send([
-      'Álvares Florence',
+        'Álvares Florence',
         'Aguaí',
         'Águas da Prata',
         'Aperibé',
